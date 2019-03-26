@@ -1,0 +1,161 @@
+#main {
+  height: 100vh;
+  background: url('/assets/background.jpg') no-repeat center;
+  background-size: cover;
+  background-position: top center;
+}
+
+#window-container {
+  display: flex;
+}
+
+.window {
+  display: flex;
+  flex-direction: column;
+
+  width: 700px;
+  height: 510px;
+  margin: auto;
+  margin-top: 100px;
+
+  border-radius: 2px;
+  box-shadow: 5px 10px 20px 0 rgba(0, 0, 0, 0.3);
+
+  .title {
+    height: 23px;
+    background: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    .button-container {
+      display: flex;
+      float: left;
+
+      .button {
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        margin-top: 4px;
+        margin-left: 5px;
+      }
+
+      .close {
+        background: red;
+      }
+
+      .minimize {
+        background: gold;
+      }
+
+      .expand {
+        background: limegreen;
+      }
+    }
+
+    span {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 3px;
+      font-size: 13px;
+      font-weight: lighter;
+    }
+  }
+
+  .content {
+    height: inherit;
+    background: rgba(0, 0, 0, 0.72);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 2px;
+    font-family: monospace;
+    color: white;
+    display: flex;
+    position: relative;
+
+    .line-numbers {
+      color: darkgray;
+      margin-left: 3px;
+      margin-right: 7px;
+      text-align: right;
+    }
+
+    .vim-bottom {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 16px;
+
+      &.airline-base {
+        bottom: 18px;
+        background-color: black;
+      }
+
+      &.airline {
+        bottom: 18px;
+
+        .left-container {
+          height: inherit;
+          float: left;
+          display: flex;
+
+          .mode {
+            background-color: yellow;
+            color: black;
+            padding: 0 6px;
+          }
+
+          .filename {
+            background-color: black;
+            color: springgreen;
+            padding: 0 6px;
+          }
+        }
+
+        .right-container {
+          height: inherit;
+          float: right;
+          display: flex;
+
+          .filetype{
+            background-color: black;
+            color: springgreen;
+            padding: 0 6px;
+          }
+
+          .encoding {
+            background-color: #404040;
+            color: gainsboro;
+            padding: 0 6px;
+            float: right;
+          }
+
+          .cursor-info {
+            background-color: yellow;
+            color: black;
+            float: right;
+            padding: 0 6px;
+            display: flex;
+
+            .word-count {
+              padding: 0 6px;
+            }
+
+            .percentage {
+              margin-top: -2px;
+              padding: 0 6px;
+            }
+
+            .positions {
+              padding: 0 6px;
+            }
+          }
+        }
+      }
+
+      &.buffer-info {
+        bottom: 2px;
+      }
+    }
+  }
+}

@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'terminal';
+  getLineNumbers = range => {
+    const numbers = [];
+    for (let i = 1; i <= range; i++) {
+      numbers.push(i);
+    }
+    return numbers;
+  };
+
+  titleText = '1. vim';
+  lineNumbers = this.getLineNumbers(30);
 }
